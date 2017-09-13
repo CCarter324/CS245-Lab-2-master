@@ -18,7 +18,7 @@ int main()
 	cout << pb_actual_text << endl;
 
 	// C.C.
-	std::string cc_actual_text = decrypt("GZ ZNK KTJ UL 'ZOZGTOI', ZNK HUGZ YOTQY", 0);
+	std::string cc_actual_text = decrypt("GZ ZNK KTJ UL 'ZOZGTOI', ZNK HUGZ YOTQY", -6);
 	std::string cc_expected_text = "AT THE END OF 'TITANIC', THE BOAT SINKS";
 	cout << cc_actual_text << endl;
 
