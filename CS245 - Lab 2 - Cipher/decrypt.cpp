@@ -16,32 +16,32 @@ string decrypt(string &cipher_text, int key)
 	string plain_text;
 
 	// store the size of the @cipher_text string as a constant
-	const int message_length = cipher_text.length;
+	const int message_length = sizeof(cipher_text);
 	
 	// decipher @cipher_text one character at a time
 	for (int i=0; i < message_length; i++)
 	{
 		// get the current character in the @cipher_text string
-		char c = cipher_text.charAt(i);
+		char c = cipher_text.at(i);
 
 		// if the character is an alpha character (A-Z), apply the key to it
-		if (c >= 'A' || c <= 'Z')
+		if (c >= 'A' && c <= 'Z')
 		{
-			c = key;
+			c = c + key;
 
 			// adjust for (i.e., wrap) characters below 'A' and above 'Z'
-			if(c > 'z') 
+			if(c > 'Z') 
 			{
-				c - 26;		// shift c down 26 ASCII codes
+				c = c - 26;		// shift c down 26 ASCII codes
 			}
-			else if (c < 'a')
+			else if (c < 'A')
 			{
-				c + 26;		// shift c up 26 ASCII codes
+				c = c + 26;		// shift c up 26 ASCII codes
 			}
 		}
 
 		// append the deciphered character to the plain_text string
-		c += plain_text;
+		plain_text += c;
 	}
 
 	return plain_text;
