@@ -10,13 +10,13 @@
  * alpha characters are CAPITALIZED, and ignores all other characters.
  */
 
-string decrypt(string &cipher_text, int key)
+string decrypt(const string &cipher_text, int key)
 {
 	// variable declaration: stores the decrypted, plain-text string
 	string plain_text;
 
 	// store the size of the @cipher_text string as a constant
-	const int message_length = sizeof(cipher_text);
+	const int message_length = cipher_text.size();
 	
 	// decipher @cipher_text one character at a time
 	for (int i=0; i < message_length; i++)
